@@ -1,0 +1,23 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+@Html.Action("_PartialHead", "KindKinderLayout")
+
+<body>
+
+    @Html.Action("_PartialNavbar", "KindKinderLayout")
+
+    @RenderBody();
+
+    @Html.Action("_PartialFooter", "KindKinderLayout")
+
+    @Html.Action("_PartialScripts", "KindKinderLayout")
+</body>
+</html>
+
+

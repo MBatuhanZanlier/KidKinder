@@ -1,0 +1,43 @@
+﻿
+@{ 
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+@Html.Action("_PartialHead", "KindKinderLayout")
+
+<body>
+    <!-- Navbar Start -->
+    @Html.Action("_PartialNavbar", "KindKinderLayout")
+    <!-- Navbar End -->
+    <!-- Header Start -->
+    @Html.Action("PartialFuture", "Default")
+    <!-- Header End -->
+    <!-- Facilities Start -->
+    @Html.Action("PartialService", "Default")
+    <!-- Facilities Start -->
+    <!-- About Start -->
+    @Html.Action("PartialAbout", "Default")
+    <!-- About End -->
+    <!-- Class Start -->
+    @Html.Action("PartialClassRooms", "Default")
+    <!-- Class End -->
+    <!-- Registration Start -->
+    @Html.Action("PartialBookASeat", "Default")
+    <!-- Registration End -->
+    <!-- Team Start -->
+    @Html.Action("PartialTeacher", "Default")
+    <!-- Team End -->
+    <!-- Testimonial Start -->
+    @Html.Action("PartialTestimonial", "Default")
+    <!-- Testimonial End -->
+    <!-- Blog Start -->
+    <!-- Blog End -->
+    <!-- Footer Start -->
+    @Html.Action("_PartialFooter", "KindKinderLayout")
+    <!-- Footer End -->
+    <!-- Back to Top -->
+    @Html.Action("_PartialScripts", "KindKinderLayout")
+</body>
+</html>
