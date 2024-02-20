@@ -17,7 +17,8 @@ namespace KidKinder.Controllers
         public PartialViewResult PartialHead()
         {
             return PartialView();
-        }
+        } 
+
         public PartialViewResult PartialPreLoedar()
         {
             return PartialView();
