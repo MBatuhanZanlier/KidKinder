@@ -1,55 +1,54 @@
-﻿
+﻿@model KidKinder.Entities.Teacher
 @{
     ViewBag.Title = "UpdateTeacher";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
 <div class="pcoded-inner-content">
-
     <div class="main-body">
         <div class="page-wrapper">
-
             <div class="page-body">
-
                 <div class="row">
                     <div class="col-sm-12">
                         <!-- Basic Form Inputs card start -->
                         <div class="card">
                             <div class="card-header">
                                 <h5>Yeni Öğretmen Girişi</h5>
-                                <span>Add class of <code>.form-control</code> with <code>&lt;input&gt;</code> tag</span>
+                                <span>Öğretmen ile ilgili verileri eksiksiz olarak doldurunuz.</span>
                             </div>
                             <div class="card-block">
-                                <h4 class="sub-title">Basic Inputs</h4>
-                                <form>
+                                <form method="post">
                                     <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label">Simple Input</label>
+                                        <label class="col-sm-2 col-form-label">Öğretmetmen Id</label>
                                         <div class="col-sm-10">
-                                            <input type="text" name="NameSurname" class="form-control">
+                                            @Html.TextBoxFor(x => x.TeacherId, new { @class = "form-control" })
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label">Simple Input</label>
+                                        <label class="col-sm-2 col-form-label">Öğretmetmen Adı Soyadı</label>
                                         <div class="col-sm-10">
-                                            <input type="text" name="Title" class="form-control">
+                                            @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Öğretmetmen Branşı</label>
+                                        <div class="col-sm-10">
+                                            @Html.DropDownListFor(x => x.BranchID, (List<SelectListItem>)ViewBag.v, new { @class = "form-control" })
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">Öğretmen Görseli</label>
                                         <div class="col-sm-10">
-                                            <input type="text" name="ImageUrl" class="form-control">
+                                            @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
                                         </div>
                                     </div>
+                                    <button class="btn btn-warning">Öğretmen Bilgilerini Güncelle</button>
                                 </form>
                             </div>
                         </div>
-
-
                     </div>
-
                 </div>
             </div>
         </div>
-
     </div>
 </div>

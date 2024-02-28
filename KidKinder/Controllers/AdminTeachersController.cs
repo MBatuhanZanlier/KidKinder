@@ -9,6 +9,7 @@ using KidKinder.Entities;
 
 namespace KidKinder.Controllers
 {
+    [Authorize]
     public class AdminTeachersController : Controller
     {
         KidKinderContext context = new KidKinderContext();
@@ -20,6 +21,13 @@ namespace KidKinder.Controllers
         [HttpGet]
         public ActionResult CreateTeacher()
         {
+            List<SelectListItem> values = (from x in context.branches.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.Name,
+                                               Value = x.BranchID.ToString()
+                                           }).ToList();
+            ViewBag.v = values;
             return View();
         }
         [HttpPost]
@@ -41,13 +49,24 @@ namespace KidKinder.Controllers
         [HttpGet]
         public ActionResult UpdateTeacher(int id)
         {
+            List<SelectListItem> values = (from x in context.branches.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.Name,
+                                               Value = x.BranchID.ToString()
+                                           }).ToList();
+            ViewBag.v = values;
             var value = context.Teachers.Find(id);
             return View(value);
         }
+        [HttpPost]
         public ActionResult UpdateTeacher(Teacher teacher)
         {
-            var value = context.Teachers.Find(id);
-
+            var value = context.Teachers.Find(teacher.TeacherId);
+            value.ImageUrl = teacher.ImageUrl;
+            value.NameSurname = teacher.NameSurname;
+            //value.Title = teacher.Title;
+            context.SaveChanges();
             return RedirectToAction("TeacherList");
         }
     }
