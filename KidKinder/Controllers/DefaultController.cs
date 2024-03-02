@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using KidKinder.Entities;
-using KidKinder.Context; 
+using KidKinder.Context;
+using System.Web.UI.WebControls;
 
 namespace KidKinder.Controllers
 {
@@ -30,17 +31,38 @@ namespace KidKinder.Controllers
         }
         public PartialViewResult PartialAbout()
         {
-            var values = context.ClassRooms.ToList();
+            var values = context.Abouts.ToList();
+            return PartialView(values);
+        }
+        public PartialViewResult PartialAboutList()
+        {
+            var values = context.AboutLists.ToList();
             return PartialView(values);
         }
         public PartialViewResult PartialClassRooms()
         {
-            var values = context.ClassRooms.ToList();
+            var values = context.ClassRooms.OrderByDescending(x => x.ClassRoomId).Take(3).ToList();
             return PartialView(values);
         }
+        [HttpGet]
         public PartialViewResult PartialBookASeat()
         {
+            List<SelectListItem> values = (from x in context.ClassRooms.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.Title,
+                                               Value = x.ClassRoomId.ToString()
+
+                                           }).ToList();
+            ViewBag.clss = values;
             return PartialView();
+        }
+        [HttpPost]
+        public ActionResult AddBookAseat(BookASeat p)
+        {
+            context.BookASeats.Add(p);
+            context.SaveChanges();
+            return RedirectToAction("Index");
         }
         public PartialViewResult PartialTeacher()
         {

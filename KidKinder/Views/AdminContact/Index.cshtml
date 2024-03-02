@@ -1,0 +1,50 @@
+﻿@model List<KidKinder.Entities.Contact>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="pcoded-inner-content">
+    Main-body start
+    <div class="main-body">
+        <div class="page-wrapper">
+            Page-body start
+            <div class="page-body">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Gelen Mesajların  </h5>
+                        <h6> @ViewBag.ısread Yeni Okunmamış Mesaj </h6>
+                        <span>İletişim Sayfası </span>
+                        <div class="card-header-right">
+                            <ul class="list-unstyled card-option">
+                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                <li><i class="fa fa-window-maximize full-card"></i></li>
+                                <li><i class="fa fa-minus minimize-card"></i></li>
+                                <li><i class="fa fa-refresh reload-card"></i></li>
+                                <li><i class="fa fa-trash close-card"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+
+                            @foreach (var item in Model)
+                            {
+                                <a href="/AdminContact/DetailMessage/@item.ContactId" class="list-group-item list-group-item-action">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1">@item.NameSurname</h5>
+                                        <small class="text-muted">@item.SenDate</small>
+                                    </div>
+                                    <p class="mb-1">@item.Message</p>
+                                    <small class="text-muted">@item.Email</small>
+
+                                </a>
+                            }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

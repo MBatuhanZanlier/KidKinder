@@ -31,5 +31,18 @@ namespace KidKinder.Controllers
             ViewBag.email = context.Communications.Select(x => x.Email).FirstOrDefault();
             return PartialView();
         }
+
+        public ActionResult CreateContact(Contact p)
+        {
+            p.SenDate = DateTime.Now;
+            p.IsRead = false;
+            context.Contacts.Add(p);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        } 
+        public PartialViewResult ContactMaps()
+        {
+            return PartialView();
+        }
     }
 }
