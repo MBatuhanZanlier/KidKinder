@@ -21,7 +21,7 @@ namespace KidKinder.Controllers
         [HttpGet]
         public ActionResult CreateTeacher()
         {
-            List<SelectListItem> values = (from x in context.branches.ToList()
+            List<SelectListItem> values = (from x in context.Branches.ToList()
                                            select new SelectListItem
                                            {
                                                Text = x.Name,
@@ -49,7 +49,7 @@ namespace KidKinder.Controllers
         [HttpGet]
         public ActionResult UpdateTeacher(int id)
         {
-            List<SelectListItem> values = (from x in context.branches.ToList()
+            List<SelectListItem> values = (from x in context.Branches.ToList()
                                            select new SelectListItem
                                            {
                                                Text = x.Name,

@@ -1,6 +1,6 @@
-﻿@model List<KidKinder.Entities.Branch>
+﻿@model List<KidKinder.Entities.Teacher>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "DetailBranch";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
@@ -12,8 +12,8 @@
             <div class="page-body">
                 <div class="card">
                     <div class="card-header">
-                        <h5>Branş Listesi Tablosu</h5>
-                        <span>Branş ile ilgili işlemleri yapabileceğiniz alandır.</span>
+                        <h5>Öğretmen Listesi Tablosu</h5>
+                        <span>Branşlara göre Öğretmen Listesi</span>
                         <div class="card-header-right">
                             <ul class="list-unstyled card-option">
                                 <li><i class="fa fa fa-wrench open-card-option"></i></li>
@@ -25,34 +25,28 @@
                         </div>
                     </div>
                     <div class="card-block table-border-style">
-                        <div class="table-hover">
+                        <div class="table-responsive">
                             <table class="table">
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Açıklama</th>
-                                        <th>Sil</th>
-                                        <th>Düzenle</th>
-                                        <th>Detay</th>
-
+                                        <th>Ad Soyad</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
                                         <tr>
-                                            <th>@item.BranchID</th>
-                                            <td>@item.Name</td>
-                                            <td>
-                                                <a href="/AdminBranch/DeleteBranch/@item.BranchID" class="btn btn-twitter">Sil</a>
-                                            </td>
-                                            <td><a href="/AdminBranch/CreateBranch/@item.BranchID" class="btn btn-outline-secondary">Düzenle</a></td>
-                                            <td><a href="/AdminBranch/DetailBranch/@item.BranchID" class="btn btn-outline-dark">Detaylar</a></td>
+                                            <td>@item.TeacherId</td>
+                                            <td>@item.NameSurname</td>
+
                                         </tr>
                                     }
+
+
                                 </tbody>
                             </table>
-                            <a href="/AdminBranch/CreateBranch/" class="btn btn-primary">Yeni Branş Kayıdı</a>
+                            <a href="/AdminBranch/Index/" class="btn btn-primary">Geri Dön</a>
                         </div>
                     </div>
                 </div>
@@ -60,4 +54,3 @@
         </div>
     </div>
 </div>
-

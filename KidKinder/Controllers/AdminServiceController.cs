@@ -18,28 +18,28 @@ namespace KidKinder.Controllers
         [HttpGet]
         public ActionResult CreateService()
         {
-           
+
             return View();
         }
         [HttpPost]
         public ActionResult CreateService(Service p)
         {
             context.Services.Add(p);
-            context.SaveChanges(); 
+            context.SaveChanges();
             return RedirectToAction("Index");
-        }  
+        }
         public ActionResult DeleteService(int id)
         {
             var value = context.Services.Find(id);
             context.Services.Remove(value);
             context.SaveChanges();
-            return RedirectToAction("Index"); 
+            return RedirectToAction("Index");
         }
         [HttpGet]
         public ActionResult UpdateService(int id)
         {
             var value = context.Services.Find(id);
-            return View(value); 
+            return View(value);
         }
         [HttpPost]
         public ActionResult UpdateService(Service p)
@@ -51,5 +51,8 @@ namespace KidKinder.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
-    } 
+
+      
+        
+    }
 }

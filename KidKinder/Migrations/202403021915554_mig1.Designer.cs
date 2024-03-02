@@ -7,13 +7,13 @@ namespace KidKinder.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class mig5 : IMigrationMetadata
+    public sealed partial class mig1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(mig5));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(mig1));
         
         string IMigrationMetadata.Id
         {
-            get { return "202402221108341_mig5"; }
+            get { return "202403021915554_mig1"; }
         }
         
         string IMigrationMetadata.Source

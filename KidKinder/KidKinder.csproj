@@ -139,6 +139,7 @@
     <Compile Include="Context\KidKinderContext.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminBranchController.cs" />
+    <Compile Include="Controllers\AdminClassromController.cs" />
     <Compile Include="Controllers\AdminContactController.cs" />
     <Compile Include="Controllers\AdminLayoutController.cs" />
     <Compile Include="Controllers\AdminServiceController.cs" />
@@ -171,17 +172,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202402221059179_mig4.cs" />
-    <Compile Include="Migrations\202402221059179_mig4.designer.cs">
-      <DependentUpon>202402221059179_mig4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202402221108341_mig5.cs" />
-    <Compile Include="Migrations\202402221108341_mig5.designer.cs">
-      <DependentUpon>202402221108341_mig5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202402221117466_mig6.cs" />
-    <Compile Include="Migrations\202402221117466_mig6.designer.cs">
-      <DependentUpon>202402221117466_mig6.cs</DependentUpon>
+    <Compile Include="Migrations\202403021915554_mig1.cs" />
+    <Compile Include="Migrations\202403021915554_mig1.Designer.cs">
+      <DependentUpon>202403021915554_mig1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\SendMessageModel.cs" />
@@ -703,10 +696,15 @@
     <Content Include="Views\AdminTestimonial\CreateTestimonial.cshtml" />
     <Content Include="Views\AdminTestimonial\UpdateTestimonial.cshtml" />
     <Content Include="Views\AdminBranch\Index.cshtml" />
+    <Content Include="Views\AdminBranch\CreateBranch.cshtml" />
+    <Content Include="Views\AdminBranch\UpdateBranch.cshtml" />
+    <Content Include="Views\AdminBranch\DetailBranch.cshtml" />
+    <Content Include="Views\AdminClassrom\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="images\" />
+    <Folder Include="Views\Default1\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -736,14 +734,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202402221059179_mig4.resx">
-      <DependentUpon>202402221059179_mig4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202402221108341_mig5.resx">
-      <DependentUpon>202402221108341_mig5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202402221117466_mig6.resx">
-      <DependentUpon>202402221117466_mig6.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202403021915554_mig1.resx">
+      <DependentUpon>202403021915554_mig1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
