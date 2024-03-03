@@ -6,13 +6,15 @@ using System.Web;
 
 namespace KidKinder.Entities
 {
-    public class Teacher
+    public class Student
     {
-      
-        public int TeacherId { get; set; }
+        [Key]
+        public int StudentId { get; set; }
         public string NameSurname { get; set; }
-        public string ImageUrl { get; set; }
-        public int BranchID { get; set; } 
-        public virtual  Branch Branch { get; set; }
+        public int BranchID { get; set; }
+        public virtual Branch Branch { get; set; }
+
+
+
     }
 }

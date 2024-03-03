@@ -68,6 +68,8 @@ namespace KidKinder.Controllers
             //value.Title = teacher.Title;
             context.SaveChanges();
             return RedirectToAction("TeacherList");
-        }
+        } 
+
+       
     }
 }

@@ -56,5 +56,12 @@ namespace KidKinder.Controllers
 
             return View(value);
         }
+        public ActionResult DetailStudent(int id)
+        {
+            var value = context.Students.Where(x => x.BranchID == id).ToList();
+            var tname = context.Teachers.Where(x => x.TeacherId == id).Select(y => y.NameSurname).FirstOrDefault();
+            ViewBag.Tname= tname;
+            return View(value);
+        }
     }
 }

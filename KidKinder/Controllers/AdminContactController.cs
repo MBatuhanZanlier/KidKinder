@@ -24,11 +24,12 @@ namespace KidKinder.Controllers
             context.Contacts.Remove(value);
             context.SaveChanges();
             return RedirectToAction("Index");
-        }
-        public ActionResult DetailMessage(int id)
+        } 
+        public ActionResult DetailMessage(int id,Contact p)
         {
-            var value = context.Contacts.Find(id); 
-             
+            var value = context.Contacts.Find(id);
+            p.IsRead = true;
+            context.SaveChanges();
             return View(value);
 
         }

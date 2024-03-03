@@ -138,11 +138,19 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\KidKinderContext.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AdminAboutController.cs" />
+    <Compile Include="Controllers\AdminAboutListController.cs" />
+    <Compile Include="Controllers\AdminBookASeatController.cs" />
     <Compile Include="Controllers\AdminBranchController.cs" />
     <Compile Include="Controllers\AdminClassromController.cs" />
+    <Compile Include="Controllers\AdminComunicationController.cs" />
     <Compile Include="Controllers\AdminContactController.cs" />
+    <Compile Include="Controllers\AdminFutureController.cs" />
     <Compile Include="Controllers\AdminLayoutController.cs" />
+    <Compile Include="Controllers\AdminMailsController.cs" />
+    <Compile Include="Controllers\AdminNoticationController.cs" />
     <Compile Include="Controllers\AdminServiceController.cs" />
+    <Compile Include="Controllers\AdminStudentController.cs" />
     <Compile Include="Controllers\AdminTeachersController.cs" />
     <Compile Include="Controllers\AdminTestimonialController.cs" />
     <Compile Include="Controllers\ClassesController.cs" />
@@ -167,6 +175,7 @@
     <Compile Include="Entities\MailSubscribe.cs" />
     <Compile Include="Entities\Notification.cs" />
     <Compile Include="Entities\Service.cs" />
+    <Compile Include="Entities\Student.cs" />
     <Compile Include="Entities\Teacher.cs" />
     <Compile Include="Entities\Testimonial.cs" />
     <Compile Include="Global.asax.cs">
@@ -175,6 +184,10 @@
     <Compile Include="Migrations\202403021915554_mig1.cs" />
     <Compile Include="Migrations\202403021915554_mig1.Designer.cs">
       <DependentUpon>202403021915554_mig1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202403022205040_mig2.cs" />
+    <Compile Include="Migrations\202403022205040_mig2.Designer.cs">
+      <DependentUpon>202403022205040_mig2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\SendMessageModel.cs" />
@@ -700,10 +713,30 @@
     <Content Include="Views\AdminBranch\UpdateBranch.cshtml" />
     <Content Include="Views\AdminBranch\DetailBranch.cshtml" />
     <Content Include="Views\AdminClassrom\Index.cshtml" />
+    <Content Include="Views\AdminClassrom\CreateClassroom.cshtml" />
+    <Content Include="Views\AdminClassrom\UpdateClassroom.cshtml" />
+    <Content Include="Views\AdminStudent\Index.cshtml" />
+    <Content Include="Views\AdminFuture\Index.cshtml" />
+    <Content Include="Views\AdminFuture\CreateFuture.cshtml" />
+    <Content Include="Views\AdminFuture\UpdateFuture.cshtml" />
+    <Content Include="Views\AdminComunication\Index.cshtml" />
+    <Content Include="Views\AdminComunication\CreateComunication.cshtml" />
+    <Content Include="Views\AdminComunication\UpdateComunication.cshtml" />
+    <Content Include="Views\AdminNotication\Index.cshtml" />
+    <Content Include="Views\AdminMails\Index.cshtml" />
+    <Content Include="Views\AdminBookASeat\Index.cshtml" />
+    <Content Include="Views\AdminBranch\DetailStudent.cshtml" />
+    <Content Include="Views\AdminAboutList\Index.cshtml" />
+    <Content Include="Views\AdminAboutList\CreateAboutList.cshtml" />
+    <Content Include="Views\AdminAboutList\UpdateAboutList.cshtml" />
+    <Content Include="Views\AdminAbout\Index.cshtml" />
+    <Content Include="Views\AdminAbout\UpdateAboutList.cshtml" />
+    <Content Include="Views\AdminAbout\CreateAbout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="images\" />
+    <Folder Include="Views\AdminMailSub\" />
     <Folder Include="Views\Default1\" />
   </ItemGroup>
   <ItemGroup>
@@ -736,6 +769,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202403021915554_mig1.resx">
       <DependentUpon>202403021915554_mig1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403022205040_mig2.resx">
+      <DependentUpon>202403022205040_mig2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
