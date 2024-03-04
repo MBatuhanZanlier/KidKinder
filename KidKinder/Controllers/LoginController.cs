@@ -9,6 +9,7 @@ using System.Web.Security;
 
 namespace KidKinder.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         KidKinderContext context = new KidKinderContext();
@@ -28,6 +29,12 @@ namespace KidKinder.Controllers
                 return RedirectToAction("TeacherList", "AdminTeachers");
             }
             return View();
+        }
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("AdminLogin");
         }
     }
 }

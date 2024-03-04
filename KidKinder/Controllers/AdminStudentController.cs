@@ -16,9 +16,16 @@ namespace KidKinder.Controllers
             return View(values);
         }
         [HttpGet] 
-        public ActionResult CreateStudent() 
-        {  
-           return View();
+        public ActionResult CreateStudent()
+        {
+            List<SelectListItem> values = (from x in context.Branches.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.Name,
+                                               Value = x.BranchID.ToString()
+                                           }).ToList();
+            ViewBag.v = values;
+            return View();
         }
         [HttpPost]
         public ActionResult CreateStudent(Student p)

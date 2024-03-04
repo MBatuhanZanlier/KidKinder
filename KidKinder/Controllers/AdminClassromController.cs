@@ -28,6 +28,7 @@ namespace KidKinder.Controllers
             ViewBag.v = values;
             return View();
         }
+        [HttpPost]
         public ActionResult CreateClassroom(ClassRoom p)
         {
             context.ClassRooms.Add(p);
@@ -53,7 +54,7 @@ namespace KidKinder.Controllers
                                            }).ToList();
             ViewBag.v = values;
             var values2=context.ClassRooms.Find(id); 
-            return View(values);
+            return View(values2);
         }
         [HttpPost]
         public ActionResult UpdateClassroom(ClassRoom p)

@@ -47,11 +47,11 @@ namespace KidKinder.Controllers
         [HttpGet]
         public PartialViewResult PartialBookASeat()
         {
-            List<SelectListItem> values = (from x in context.ClassRooms.ToList()
+            List<SelectListItem> values = (from x in context.Branches.ToList()
                                            select new SelectListItem
                                            {
-                                               Text = x.Title,
-                                               Value = x.ClassRoomId.ToString()
+                                               Text = x.Name,
+                                               Value = x.BranchID.ToString()
 
                                            }).ToList();
             ViewBag.clss = values;

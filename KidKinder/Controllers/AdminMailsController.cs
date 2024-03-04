@@ -14,7 +14,7 @@ namespace KidKinder.Controllers
         public ActionResult Index()
         {
             var values = context.MailSubscribes.ToList();
-            return View();
+            return View(values);
         }   
         public ActionResult DeleteMail(int id)
         {

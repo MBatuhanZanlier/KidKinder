@@ -65,11 +65,12 @@ namespace KidKinder.Controllers
             var value = context.Teachers.Find(teacher.TeacherId);
             value.ImageUrl = teacher.ImageUrl;
             value.NameSurname = teacher.NameSurname;
-            //value.Title = teacher.Title;
+            value.TeacherId = teacher.TeacherId;
+            value.BranchID = teacher.BranchID;
             context.SaveChanges();
             return RedirectToAction("TeacherList");
-        } 
+        }
 
-       
+
     }
 }

@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using KidKinder.Entities;
+using KidKinder.Context;
 namespace KidKinder.Controllers
 {
     public class GalleryController : Controller
     {
-        // GET: Gallery
+            KidKinderContext context=new KidKinderContext();
         public ActionResult Index()
         {
             return View();
@@ -20,8 +21,9 @@ namespace KidKinder.Controllers
         }
 
         public PartialViewResult GalleryPartial()
-        {
-            return PartialView();
+        {  
+            var values=context.Galleries.Where(x => x.Status==true).ToList();
+            return PartialView(values);
         }
     }
 }

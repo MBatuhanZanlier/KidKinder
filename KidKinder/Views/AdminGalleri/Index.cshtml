@@ -1,0 +1,68 @@
+﻿@model List<KidKinder.Entities.Gallery>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="pcoded-inner-content">
+    <!-- Main-body start -->
+    <div class="main-body">
+        <div class="page-wrapper">
+            <!-- Page-body start -->
+            <div class="page-body">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Hakkımda Listesi Tablosu</h5>
+                        <div class="card-header-right">
+                            <ul class="list-unstyled card-option">
+                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                <li><i class="fa fa-window-maximize full-card"></i></li>
+                                <li><i class="fa fa-minus minimize-card"></i></li>
+                                <li><i class="fa fa-refresh reload-card"></i></li>
+                                <li><i class="fa fa-trash close-card"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-block table-border-style">
+                        <div class="table-hover">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Resim</th>
+                                        <th>Durum</th>
+                                        <th>Sil</th>
+                                  
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <th>@item.GalleryId</th>
+                                            <th><img src="@item.ImageUrl" style="180px;width:200px;" /></th>
+                                            @if (item.Status == true)
+                                            {
+                                                <td><a href="/AdminGalleri/StatusAktif/@item.GalleryId"><i class="btn btn-success">Aktif</i></a></td>
+                                            }
+                                            else
+                                            {
+                                                <td>
+                                                    <a href="/AdminGalleri/StatusPasif/@item.GalleryId"><i class="btn btn-danger">Pasif</i></a>
+                                                </td>
+                                            }
+
+                                            <td><a href="/AdminGalleri/DeleteGalleri/@item.GalleryId" class="btn btn-danger">Sil</a></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <a href="/AdminGallerit/CreateGalleri/" class="btn btn-primary">Yeni Kayıt</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

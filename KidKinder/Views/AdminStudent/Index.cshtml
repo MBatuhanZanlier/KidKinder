@@ -12,8 +12,8 @@
             <div class="page-body">
                 <div class="card">
                     <div class="card-header">
-                        <h5>Servis Listesi Tablosu</h5>
-                        <span>Servis ile ilgili işlemleri yapabileceğiniz alandır.</span>
+                        <h5>Öğrenci Listesi</h5>
+                        <span>Öğrenci ile ilgili işlemleri yapabileceğiniz alandır.</span>
                         <div class="card-header-right">
                             <ul class="list-unstyled card-option">
                                 <li><i class="fa fa fa-wrench open-card-option"></i></li>
@@ -32,7 +32,6 @@
                                         <th>#</th>
                                         <th>Başlık</th>
                                         <th>Açıklama</th>
-                                        <th>Icon</th>
                                         <th>Sil</th>
                                         <th>Güncelle</th>
                                     </tr>
@@ -44,10 +43,8 @@
                                             <th>@item.StudentId</th>
                                             <td>@item.NameSurname</td>
                                             <td>@item.Branch.Name</td>
-                                            
-
                                             <td><a href="/AdminStudent/DeleteStudent/@item.StudentId" class="btn btn-danger">Sil</a></td>
-                                            <td><a href="/AdminStudent/UpdateStudent/@item.StudentId" class="btn btn-success">Güncelle</a></td>
+                                            <td><a href="/AdminStudent/UpdateStudent/@item.StudentId" class="btn btn-success">Düzenle</a></td>
                                         </tr>
                                     }
                                 </tbody>

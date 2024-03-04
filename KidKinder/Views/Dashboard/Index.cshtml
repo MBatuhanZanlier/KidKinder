@@ -1,10 +1,12 @@
-﻿
+﻿@model List<KidKinder.Entities.Teacher>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
-<<link rel="stylesheet" type="text/css" href="~/Templates/material_able-main/assets/css/font-awesome-n.min.css">
+<
+<link rel="stylesheet" type="text/css" href="~/Templates/material_able-main/assets/css/font-awesome-n.min.css">
+
 
 <div class="pcoded-inner-content">
     <!-- Main-body start -->
@@ -13,7 +15,7 @@
             <!-- Page-body start -->
             <div class="page-body">
                 <div class="row">
-
+                    <!-- Material statustic card start -->
                     <div class="col-xl-4 col-md-12">
                         <div class="card mat-stat-card">
                             <div class="card-block">
@@ -21,22 +23,22 @@
                                     <div class="col-sm-6 b-r-default p-b-20 p-t-20">
                                         <div class="row align-items-center text-center">
                                             <div class="col-4 p-r-0">
-                                                <i class="far fa-user text-c-purple f-24"></i>
+                                                <i class="far fa-user text-c-orenge f-24"></i>
                                             </div>
                                             <div class="col-8 p-l-0">
-                                                <h5>10K</h5>
-                                                <p class="text-muted m-b-0">Visitors</p>
+                                                <h5>@ViewBag.MatCount</h5>
+                                                <p class="icofont-ui-text-chat m-b-0">Matematik dersi alan öğrenciler</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-6 p-b-20 p-t-20">
                                         <div class="row align-items-center text-center">
                                             <div class="col-4 p-r-0">
-                                                <i class="fas fa-volume-down text-c-green f-24"></i>
+                                                <i class="far fa-user text-c-orenge f-24"></i>
                                             </div>
                                             <div class="col-8 p-l-0">
-                                                <h5>100%</h5>
-                                                <p class="text-muted m-b-0">Volume</p>
+                                                <h5>@ViewBag.TurkceCount</h5>
+                                                <p class="text-muted m-b-0">Türkçe dersi alan öğrenciler</p>
                                             </div>
                                         </div>
                                     </div>
@@ -45,22 +47,22 @@
                                     <div class="col-sm-6 p-b-20 p-t-20 b-r-default">
                                         <div class="row align-items-center text-center">
                                             <div class="col-4 p-r-0">
-                                                <i class="far fa-file-alt text-c-red f-24"></i>
+                                                <i class="far fa-user text-c-red f-24"></i>
                                             </div>
                                             <div class="col-8 p-l-0">
-                                                <h5>2000+</h5>
-                                                <p class="text-muted m-b-0">Files</p>
+                                                <h5> @ViewBag.AlmancaCount</h5>
+                                                <p class="text-muted m-b-0">Almanca dersi alan öğrenciler</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-6 p-b-20 p-t-20">
                                         <div class="row align-items-center text-center">
                                             <div class="col-4 p-r-0">
-                                                <i class="far fa-envelope-open text-c-blue f-24"></i>
+                                                <i class="far fa-user text-c-orenge"></i>
                                             </div>
                                             <div class="col-8 p-l-0">
-                                                <h5>120</h5>
-                                                <p class="text-muted m-b-0">Mails</p>
+                                                <h5>@ViewBag.ResımCount </h5>
+                                                <p class="text-muted m-b-0">Görsel sanat öğrenci</p>
                                             </div>
                                         </div>
                                     </div>
@@ -68,8 +70,131 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-xl-4 col-md-12">
+                        <div class="card mat-stat-card">
+                            <div class="card-block">
+                                <div class="row align-items-center b-b-default">
+                                    <div class="col-sm-6 b-r-default p-b-20 p-t-20">
+                                        <div class="row align-items-center text-center">
+                                            <div class="col-4 p-r-0">
+                                                <i class="fas fa-book text-c-purple f-24"></i>
+                                            </div>
+                                            <div class="col-8 p-l-0">
+                                                <h5>@ViewBag.student</h5>
+                                                <p class="text-muted m-b-0">Toplam öğrenci sayısı</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 p-b-20 p-t-20">
+                                        <div class="row align-items-center text-center">
+                                            <div class="col-4 p-r-0">
+                                                <i class="fas fa-male text-c-green f-24"></i>
+                                            </div>
+                                            <div class="col-8 p-l-0">
+                                                <h5>@ViewBag.teacher</h5>
+                                                <p class="text-muted m-b-0">Toplam Öğretmen sayısı</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row align-items-center">
+                                    <div class="col-sm-6 p-b-20 p-t-20 b-r-default">
+                                        <div class="row align-items-center text-center">
+                                            <div class="col-4 p-r-0">
+                                                <i class="fas fa-comment text-c-red f-24"></i>
+                                            </div>
+                                            <div class="col-8 p-l-0">
+                                                <h5>@ViewBag.testim</h5>
+                                                <p class="text-muted m-b-0">Yapılan yorumlar</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 p-b-20 p-t-20">
+                                        <div class="row align-items-center text-center">
+                                            <div class="col-4 p-r-0">
+                                                <i class="fas fa-envelope text-c-blue f-24"></i>
+                                            </div>
+                                            <div class="col-8 p-l-0">
+                                                <h5>@ViewBag.message</h5>
+                                                <p class="text-muted m-b-0">Gelen okunmamış mesajlar</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-12">
+                        <div class="card mat-clr-stat-card text-white green ">
+                            <div class="card-block">
+                                <div class="row">
+                                    <div class="col-3 text-center bg-c-green">
+                                        <i class="fas fa-money mat-icon f-24"></i>
+                                    </div>
+                                    <div class="col-9 cst-cont">
+                                        <h5>@ViewBag.AvrPrice</h5>
+                                        <p class="m-b-0">Toplam gelir</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mat-clr-stat-card text-white blue">
+                            <div class="card-block">
+                                <div class="row">
+                                    <div class="col-3 text-center bg-c-blue">
+                                        <i class="fas fa-trophy mat-icon f-24"></i>
+                                    </div>
+                                    <div class="col-9 cst-cont">
+                                        <h5>@ViewBag.kayıt</h5>
+                                        <p class="m-b-0">Toplam ön kayıt</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-6 col-md-12">
+                        <div class="card table-card">
+                            <div class="card-header">
+                                <h5>Öğretmenler</h5>
+                                <div class="card-header-right">
+                                    <ul class="list-unstyled card-option">
+                                        <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                        <li><i class="fa fa-window-maximize full-card"></i></li>
+                                        <li><i class="fa fa-minus minimize-card"></i></li>
+                                        <li><i class="fa fa-refresh reload-card"></i></li>
+                                        <li><i class="fa fa-trash close-card"></i></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-block">
+                                <div class="table-responsive">
+                                    <table class="table table-hover m-b-0 without-header">
+                                        <tbody>
+                                            @foreach (var item in Model)
+                                            {
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-inline-block align-middle">
+                                                            <img src="@item.ImageUrl" alt="user image" class="img-radius img-40 align-top m-r-15">
+                                                            <div class="d-inline-block">
+                                                                <h6>@item.NameSurname</h6>
+                                                                <p class="text-muted m-b-0">@item.Branch.Name</p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
 
                 </div>
+
             </div>
         </div>
     </div>

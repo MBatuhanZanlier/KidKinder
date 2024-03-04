@@ -18,6 +18,7 @@ namespace KidKinder.Controllers
         [HttpGet]
         public ActionResult CreateBranch()
         {
+     
             return View();
         }
         [HttpPost]
